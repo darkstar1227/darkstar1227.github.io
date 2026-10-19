@@ -1,32 +1,36 @@
-# React + TypeScript + Vite
+# darkstar1227.github.io
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+Personal site of Hao-Ting Lee (Justin). React 19 + Vite + TypeScript, styled with the Prism design system tokens. English first, with a Chinese toggle.
 
-Currently, two official plugins are available:
+## Scripts
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+| Command | What it does |
+| --- | --- |
+| `npm run dev` | Dev server with HMR |
+| `npm run build` | Type-check, client build, SSR build, then prerender the page into `dist/index.html` |
+| `npm run preview` | Serve `dist/` locally |
+| `npm run images` | Rebuild the responsive portrait set (AVIF + WebP) in `public/img/` from `scripts/portrait-source.jpg` |
+| `npm run lint` | oxlint |
 
-## React Compiler
+## Layout
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- `src/data/content.ts`: all copy (en / zh). Every figure comes from the resume profile; edit text here.
+- `src/data/icons.ts`: Prism line icons.
+- `src/components/Sections.tsx`: one component per page section.
+- `src/components/Chrome.tsx`: fixed nav, language switch, chapter pill, progress bar.
+- `src/lib/stage.ts`: scroll stage controller (page flip, pinning, active chapter, reveals). Runs outside React.
+- `src/styles/tokens.css`: Prism tokens (Graphite theme). `src/styles/app.css`: everything else.
 
-## Expanding the Oxlint configuration
+## Performance rules
 
-If you are developing a production application, we recommend enabling type-aware lint rules by installing `oxlint-tsgolint` and editing `.oxlintrc.json`:
+The page is built so first paint needs no JavaScript and scrolling never drops frames. Keep these when editing:
 
-```json
-{
-  "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "plugins": ["react", "typescript", "oxc"],
-  "options": {
-    "typeAware": true
-  },
-  "rules": {
-    "react/rules-of-hooks": "error",
-    "react/only-export-components": ["warn", { "allowConstantExport": true }]
-  }
-}
-```
+1. **Prerendered HTML.** `npm run build` renders the page on the server side and React hydrates it. Content is visible before any JS runs.
+2. **Animate only `transform` and `opacity`.** Reveals, the page flip overlay, the progress bar and the chapter pill all stay on the compositor. No `filter`, `clip-path`, `color` or layout properties in transitions.
+3. **No `backdrop-filter` or SVG filters inside the stacked pages.** They re-filter every frame and, combined with `position: sticky`, trigger Chromium compositing bugs (lower pages drawing through upper ones). Glass cards and glass lettering are static paints (gradients + inset highlights).
+4. **Scrolling never touches React or layout.** `stage.ts` measures pages once (and on resize / language change) and caches the numbers; scroll and wheel handlers only do arithmetic. Only the nav and chapter pill subscribe to the active section.
+5. **One `IntersectionObserver`** for every reveal; elements are revealed once and unobserved.
+6. **Page flips use native smooth scrolling**, which the browser runs on the compositor thread.
+7. **Images**: the portrait ships as AVIF/WebP at four widths with `fetchpriority="high"` and a preload, so the largest image arrives first.
 
-See the [Oxlint rules documentation](https://oxc.rs/docs/guide/usage/linter/rules) for the full list of rules and categories.
+Reduced motion: when the OS asks for it, the inline script in `index.html` leaves the `motion` class off, so nothing is hidden or animated and the page scrolls normally.
