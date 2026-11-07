@@ -170,9 +170,9 @@ export const I18N = {
           "tone": "success",
           "title": "Keeping systems running, every day",
           "org": "Cancerfree Biotech · Software Engineer",
-          "a": "Grew internship prototypes into systems that run on their own, ",
-          "s": "and started owning the moments they break",
-          "b": ": job scheduling, stuck cameras, node backups. Also operating local AI inference and contributing to RAG and lab-workflow systems."
+          "a": "Grew internship prototypes into systems that run on their own, and own the moments they break. ",
+          "s": "I also build the internal tools colleagues use every day",
+          "b": ": a company AI desktop assistant, a lab records app that replaced a paid SaaS, a Shopify back office, plus local AI inference and a PubMed RAG pipeline."
         },
         {
           "when": "2026 →",
@@ -182,7 +182,7 @@ export const I18N = {
           "org": "Open to SRE, platform, backend and ML infrastructure roles",
           "a": "Next is depth: ",
           "s": "becoming an engineer who designs, deploys and operates reliable software and AI systems",
-          "b": ", in Taiwan or abroad. I'm documenting the path in my iThome Ironman series."
+          "b": ", in Taiwan or abroad. I documented the path in my iThome Ironman series."
         }
       ]
     },
@@ -199,9 +199,9 @@ export const I18N = {
           "name": "Build",
           "desc": "From requirements to a working product: APIs, databases, auth and the interfaces people actually use.",
           "feats": [
-            "FastAPI · Vue.js · React · Next.js",
-            "PostgreSQL · Supabase · pgvector",
-            "4+ full-stack systems shipped as an intern"
+            "FastAPI · React · Next.js · Vue.js",
+            "PostgreSQL · Supabase · Neon · pgvector",
+            "Internal tools for lab, operations and e-commerce teams"
           ]
         },
         {
@@ -233,10 +233,10 @@ export const I18N = {
           "icon": "sparkle",
           "tag": "Applied AI & imaging",
           "name": "Research",
-          "desc": "A foundation in deep learning for medical images, and the habit of measuring carefully.",
+          "desc": "A foundation in deep learning for medical images, now applied to agent tools and RAG, with the habit of measuring carefully.",
           "feats": [
-            "PyTorch · OpenCV",
-            "CTC segmentation and time-series analysis",
+            "PyTorch · OpenCV · CTC segmentation",
+            "Agent tools, RAG and MCP integration",
             "7 publications, 3 ICMHI awards"
           ]
         }
@@ -257,7 +257,7 @@ export const I18N = {
           "a": "When requirements are fuzzy, I don't wait around or start on a hunch. I ",
           "s": "research the problem and possible directions myself",
           "b": ", lay out a few options, then align with whoever asked so we choose a path together.",
-          "proof": "As an intern I owned most projects end to end: requirements, architecture, implementation and code review."
+          "proof": "Today that means turning a colleague's request into a UI or feature design, having Claude Code or Codex draft the plan, reviewing it, then shipping with tests, CI and a trial run by the person who asked."
         },
         {
           "cls": "trait t2",
@@ -317,7 +317,7 @@ export const I18N = {
           "a": "When I want to understand something, I build one. To manage my own dev accounts I wrote ",
           "s": "Relay, a cross-platform CLI published on npm",
           "b": ". To learn the delivery chain I keep devops-lab: one small app taken through image signing, Kubernetes, Terraform and CI.",
-          "proof": "I'm also writing my 2026 iThome Ironman series, Learning SRE for the AI Era."
+          "proof": "I also wrote a 30-day 2026 iThome Ironman series, Learning SRE for the AI Era."
         }
       ]
     },
@@ -330,13 +330,31 @@ export const I18N = {
           "cls": "rv",
           "title": "LabMonitor",
           "meta": "Lab instrument monitoring",
-          "text": "From a vendor-independent internship prototype to a second version with cameras, OCR, sensors and alerts. Materials cost about NT$20,000 versus an NT$120,000 alternative.",
+          "text": "From a vendor-independent internship prototype to a second version with cameras, OCR, sensors and about 12 alert types, with no service outage while in operation. Materials cost about NT$20,000 versus an NT$120,000 alternative.",
           "why": "→ Build · Run · Connect",
           "link": "",
           "linkLabel": ""
         },
         {
           "cls": "rv d1",
+          "title": "CF OpenWorker",
+          "meta": "Internal AI agent platform",
+          "text": "Colleagues needed AI that could work with confidential data. I led the company customization of an open-source desktop agent: company SSO, the internal model gateway, beta/LTS releases with auto-update, a web portal, and 7 agent tool families such as long-audio transcription and approval-gated sharing.",
+          "why": "→ Build · Run · Research",
+          "link": "",
+          "linkLabel": ""
+        },
+        {
+          "cls": "rv d2",
+          "title": "LabReport",
+          "meta": "Lab records · replaced Ragic",
+          "text": "Moved the lab's records off Ragic, a paid SaaS, into an in-house app built around its own workflows: reagent lots, per-tube checkout and instrument records, behind company Azure AD. Four subscription seats are already cancelled.",
+          "why": "→ Build",
+          "link": "",
+          "linkLabel": ""
+        },
+        {
+          "cls": "rv",
           "title": "Local AI inference",
           "meta": "DGX Spark · Mac mini · vLLM",
           "text": "Set up and operate LLM, speech and video-generation models, with health checks and auto-recovery from GPU memory errors.",
@@ -345,7 +363,7 @@ export const I18N = {
           "linkLabel": ""
         },
         {
-          "cls": "rv d2",
+          "cls": "rv d1",
           "title": "Prometheus VMS",
           "meta": "Smart-glasses lab system",
           "text": "Worked on video management integration: multi-stream RTSP, live browser viewing, recording and clip extraction.",
@@ -354,11 +372,20 @@ export const I18N = {
           "linkLabel": ""
         },
         {
-          "cls": "rv",
+          "cls": "rv d2",
           "title": "PubBrain",
           "meta": "PubMed knowledge layer and RAG",
-          "text": "Turned a decade of PubMed abstracts into a semantically searchable knowledge base, traced with LangSmith.",
+          "text": "Turned PubMed abstracts from 2016 to 2026 into a semantically searchable knowledge base on PostgreSQL and pgvector, with LangSmith tracing of the RAG flow.",
           "why": "→ Build · Research",
+          "link": "",
+          "linkLabel": ""
+        },
+        {
+          "cls": "rv",
+          "title": "Eatable",
+          "meta": "Personal project · MCP server",
+          "text": "A chat-driven meal logger with its own OAuth-protected MCP server: about 20 tools shared by the in-app agent and by Claude, plus a matching Agent Skill. I use it with Claude every day.",
+          "why": "→ How I work: still building",
           "link": "",
           "linkLabel": ""
         },
@@ -492,10 +519,11 @@ export const I18N = {
       "a": "I'm in no rush to pin myself to one job title. Over the next three years I want to become an engineer who can ",
       "s": "design, deploy and operate reliable systems",
       "b": ", finding my specialty through hands-on work.",
-      "writeTag": "Now writing · 2026 iThome Ironman · AI Engineering",
+      "writeTag": "2026 iThome Ironman · AI Engineering",
       "writeTitle": "Learning SRE for the AI Era",
       "writeText": "My contest series, from an SRE lab to production AI reliability: FastAPI, Prometheus, Grafana, Loki, OpenTelemetry and LLM tracing, applied to SLOs, error budgets, failure injection and incidents.",
-      "writeLink": "Read the series on GitHub",
+      "writeLinkIthome": "Read the series on iThome",
+      "writeLink": "Lab code on GitHub",
       "rows": [
         {
           "k": "Most interested",
@@ -570,6 +598,14 @@ export const I18N = {
             },
             {
               "name": "Vercel",
+              "cls": ""
+            },
+            {
+              "name": "Supabase",
+              "cls": ""
+            },
+            {
+              "name": "Cloudflare",
               "cls": ""
             },
             {
@@ -809,9 +845,9 @@ export const I18N = {
           "tone": "success",
           "title": "讓系統每天穩穩地跑",
           "org": "Cancerfree Biotech · 軟體工程師",
-          "a": "把實習時的原型延伸成每天自動運作的系統，",
-          "s": "也開始負責它們出問題的時候",
-          "b": "：排程分配、相機卡住、節點備份。同時維運本地 AI 推論服務，參與 RAG 與實驗室流程系統。"
+          "a": "把實習時的原型延伸成每天自動運作的系統，也負責它們出問題的時候。",
+          "s": "同時打造同事每天在用的內部工具",
+          "b": "：公司內部 AI 桌面助理、取代付費 SaaS 的實驗室紀錄系統、Shopify 商店後台，以及本地 AI 推論與 PubMed RAG 流程。"
         },
         {
           "when": "2026 →",
@@ -821,7 +857,7 @@ export const I18N = {
           "org": "尋找 SRE、平台、後端與 ML 基礎設施職位",
           "a": "接下來的重點是深度：",
           "s": "成為能設計、部署並維運可靠軟體與 AI 系統的工程師",
-          "b": "，在台灣或海外都可以。這段路我正寫成 iThome 鐵人賽系列。"
+          "b": "，在台灣或海外都可以。這段路我寫成了 iThome 鐵人賽系列。"
         }
       ]
     },
@@ -838,9 +874,9 @@ export const I18N = {
           "name": "Build 建置",
           "desc": "從需求到能用的產品：API、資料庫、驗證，以及人們真正會用的介面。",
           "feats": [
-            "FastAPI · Vue.js · React · Next.js",
-            "PostgreSQL · Supabase · pgvector",
-            "實習期間交付 4+ 個全端系統"
+            "FastAPI · React · Next.js · Vue.js",
+            "PostgreSQL · Supabase · Neon · pgvector",
+            "為實驗室、營運與電商團隊打造內部工具"
           ]
         },
         {
@@ -872,10 +908,10 @@ export const I18N = {
           "icon": "sparkle",
           "tag": "應用 AI 與醫學影像",
           "name": "Research 研究",
-          "desc": "醫學影像深度學習的研究底子，以及謹慎量測的習慣。",
+          "desc": "醫學影像深度學習的研究底子，延伸到 agent 工具與 RAG，以及謹慎量測的習慣。",
           "feats": [
-            "PyTorch · OpenCV",
-            "CTC 分割與時間序列分析",
+            "PyTorch · OpenCV · CTC 分割",
+            "Agent 工具、RAG 與 MCP 整合",
             "7 篇發表、3 座 ICMHI 獎項"
           ]
         }
@@ -896,7 +932,7 @@ export const I18N = {
           "a": "需求說不清楚的時候，我不會乾等，也不會憑感覺開工。我會先",
           "s": "自己把問題和可能的技術方向查一輪",
           "b": "，整理成幾個選項，再回頭跟提出需求的人對齊，一起決定方向。",
-          "proof": "實習期間大多數專案，從需求分析、架構、實作到 code review，都是我端到端負責。"
+          "proof": "現在的做法是：把同事的需求轉成 UI 或功能設計，讓 Claude Code 或 Codex 產出實作計畫，我審過計畫後再開發，最後跑測試、CI，並請提出需求的同事試用。"
         },
         {
           "cls": "trait t2",
@@ -956,7 +992,7 @@ export const I18N = {
           "a": "想搞懂一件事，我會直接做一個出來。為了管理自己的開發帳號，我寫了",
           "s": "跨平台 CLI Relay 並發布到 npm",
           "b": "；為了理解交付鏈，我持續維護 devops-lab：把一個小應用從映像簽章一路帶到 Kubernetes、Terraform 和 CI。",
-          "proof": "也正在寫 2026 iThome 鐵人賽系列《Learning SRE for the AI Era》。"
+          "proof": "也完成了 30 天的 2026 iThome 鐵人賽系列《Learning SRE for the AI Era》。"
         }
       ]
     },
@@ -969,13 +1005,31 @@ export const I18N = {
           "cls": "rv",
           "title": "LabMonitor",
           "meta": "實驗室儀器監控",
-          "text": "從實習時不綁供應商的初版，做到有相機、OCR、感測器與告警的第二版。材料成本約 NT$20,000，替代方案約 NT$120,000。",
+          "text": "從實習時不綁供應商的初版，做到有相機、OCR、感測器與約 12 種告警的第二版，運作期間沒有發生服務中斷。材料成本約 NT$20,000，替代方案約 NT$120,000。",
           "why": "→ Build · Run · Connect",
           "link": "",
           "linkLabel": ""
         },
         {
           "cls": "rv d1",
+          "title": "CF OpenWorker",
+          "meta": "內部 AI agent 平台",
+          "text": "同事需要能處理機密資料的 AI。我主導把開源桌面 agent 公司化：公司 SSO、內部模型閘道、beta／LTS 雙軌發版與自動更新、網站入口，並開發 7 類 agent 工具，例如長音檔轉錄與需審核的分享。",
+          "why": "→ Build · Run · Research",
+          "link": "",
+          "linkLabel": ""
+        },
+        {
+          "cls": "rv d2",
+          "title": "LabReport",
+          "meta": "實驗室紀錄 · 取代 Ragic",
+          "text": "把實驗室紀錄從付費 SaaS Ragic 搬進依自家流程打造的內部系統：試劑批號、逐管領用、儀器紀錄，並以公司 Azure AD 控管存取。已經減少 4 個訂閱席位。",
+          "why": "→ Build",
+          "link": "",
+          "linkLabel": ""
+        },
+        {
+          "cls": "rv",
           "title": "本地 AI 推論",
           "meta": "DGX Spark · Mac mini · vLLM",
           "text": "架設與維運 LLM、語音辨識與影音生成模型，搭配健康檢查，從 GPU 記憶體錯誤自動復原。",
@@ -984,7 +1038,7 @@ export const I18N = {
           "linkLabel": ""
         },
         {
-          "cls": "rv d2",
+          "cls": "rv d1",
           "title": "Prometheus VMS",
           "meta": "智慧眼鏡實驗室系統",
           "text": "參與影像管理整合：多路 RTSP 串流、瀏覽器即時觀看、錄影與片段擷取。",
@@ -993,11 +1047,20 @@ export const I18N = {
           "linkLabel": ""
         },
         {
-          "cls": "rv",
+          "cls": "rv d2",
           "title": "PubBrain",
           "meta": "PubMed 知識層與 RAG",
-          "text": "把十年份的 PubMed 摘要整理成可語意搜尋的知識庫，用 LangSmith 追蹤檢索流程。",
+          "text": "把 2016 到 2026 年的 PubMed 摘要整理成可語意搜尋的知識庫（PostgreSQL + pgvector），用 LangSmith 追蹤 RAG 流程。",
           "why": "→ Build · Research",
+          "link": "",
+          "linkLabel": ""
+        },
+        {
+          "cls": "rv",
+          "title": "Eatable",
+          "meta": "個人專案 · MCP server",
+          "text": "用聊天記錄飲食的 app，自己寫了有 OAuth 保護的 MCP server：約 20 個工具由 app 內 agent 與 Claude 共用，並搭配對應的 Agent Skill。我每天都用 Claude 透過它記錄。",
+          "why": "→ 做事方式：下班還在做",
           "link": "",
           "linkLabel": ""
         },
@@ -1131,10 +1194,11 @@ export const I18N = {
       "a": "我不急著替自己貼上一個職稱。接下來三年，我想成為能",
       "s": "設計、部署並維運可靠系統",
       "b": "的工程師，在動手的過程中找到最適合的專長。",
-      "writeTag": "正在寫 · 2026 iThome 鐵人賽 · AI Engineering",
+      "writeTag": "2026 iThome 鐵人賽 · AI Engineering",
       "writeTitle": "Learning SRE for the AI Era",
       "writeText": "我的參賽系列：從 SRE Lab 到 Production AI Reliability。用 FastAPI、Prometheus、Grafana、Loki、OpenTelemetry 與 LLM Tracing，實作 SLO、Error Budget、故障注入與事故處理。",
-      "writeLink": "在 GitHub 閱讀系列",
+      "writeLinkIthome": "在 iThome 閱讀系列",
+      "writeLink": "GitHub 實作程式碼",
       "rows": [
         {
           "k": "最感興趣",
@@ -1209,6 +1273,14 @@ export const I18N = {
             },
             {
               "name": "Vercel",
+              "cls": ""
+            },
+            {
+              "name": "Supabase",
+              "cls": ""
+            },
+            {
+              "name": "Cloudflare",
               "cls": ""
             },
             {

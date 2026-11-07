@@ -1,0 +1,31 @@
+# Hao-Ting Lee (李浩廷, Justin)
+
+> Software engineer in Taoyuan, Taiwan. I turn real-world needs into systems that keep running: reliable software, internal AI tools and lab infrastructure, with a research background in deep learning for medical imaging.
+
+## Profile
+
+- Role: Software Engineer at Cancerfree Biotech Ltd (精拓生技), since 2025
+- Education: M.Sc. and B.Sc., Computer Science and Engineering, Yuan Ze University (元智大學)
+- Focus: site reliability, infrastructure, full-stack internal tools, local LLM inference, RAG and agent tooling
+
+## Selected work
+
+- LabMonitor: lab equipment monitoring and alerting (about 12 alert types), running without a service outage
+- CF OpenWorker: internal AI agent platform with company SSO, an internal model gateway and beta/LTS releases
+- LabReport: lab records app that replaced a paid SaaS (Ragic)
+- PubBrain: PubMed RAG pipeline on PostgreSQL and pgvector
+- Eatable (personal project): OAuth MCP server with an Agent Skill, used daily with Claude
+- devops-lab (personal project): Kubernetes, Terraform and observability practice lab — https://github.com/darkstar1227/devops-lab
+
+## Writing and research
+
+- Learning SRE for the AI Era (2026 iThome Ironman, AI Engineering, Traditional Chinese): https://ithelp.ithome.com.tw/users/20163611/ironman/9343
+- Demodicosis mite detection with deep learning, Diagnostics 15(24), 2025: https://doi.org/10.3390/diagnostics15243204
+- ICMHI awards: Session Best Presenter (2022), 1st Place Student Essay (2023), 1st Place Master's Presentation (2025)
+
+## Links
+
+- Website: https://dst-justin.com/
+- GitHub: https://github.com/darkstar1227
+- LinkedIn: https://www.linkedin.com/in/justin-lee-dst1227
+- Email: justin30303.jl@gmail.com

@@ -2,11 +2,12 @@ import type { ReactNode } from 'react'
 import type { Copy } from '../data/content'
 import type { IconName } from '../data/icons'
 import { reveal } from '../lib/reveal'
-import { Badge, Button, Card, Counter, Eyebrow, GlassTitle, Heading, Icon, Pigment } from './ui'
+import { Badge, Button, Card, Counter, Eyebrow, Heading, LensTitle, Icon, Pigment } from './ui'
 
 const EMAIL = 'mailto:justin30303.jl@gmail.com'
 const LINKEDIN = 'https://www.linkedin.com/in/justin-lee-dst1227'
 const GITHUB = 'https://github.com/darkstar1227'
+const ITHOME_SERIES = 'https://ithelp.ithome.com.tw/users/20163611/ironman/9343'
 
 /** A stacked page: pins at the bottom edge and gets covered by the next one. */
 function Page({ id, className, label, labelledBy, children }: { id?: string; className?: string; label?: string; labelledBy?: string; children: ReactNode }) {
@@ -33,7 +34,7 @@ export function Hero({ t }: { t: Copy }) {
                 <span>{h.eyebrow}</span>
               </div>
               <p className="kicker ld l1">{h.kicker}</p>
-              <GlassTitle className="hero-title ld l2">{h.name}</GlassTitle>
+              <LensTitle className="hero-title ld l2">{h.name}</LensTitle>
               <p className="hero-sub-name ld l2">{h.subName}</p>
               <p className="hero-sub ld l3">
                 {h.a}
@@ -434,9 +435,14 @@ export function Roadmap({ t }: { t: Copy }) {
                   <h3 className="write-title">{r.writeTitle}</h3>
                   <p>{r.writeText}</p>
                   <p className="write-line">Build → Trace → Break → Measure → Evaluate → Recover → Improve</p>
-                  <a className="write-link" href="https://github.com/darkstar1227/learning-sre-for-ai-era" target="_blank" rel="noopener noreferrer">
-                    {r.writeLink} →
-                  </a>
+                  <div className="write-links">
+                    <a className="write-link" href={ITHOME_SERIES} target="_blank" rel="noopener noreferrer">
+                      {r.writeLinkIthome} →
+                    </a>
+                    <a className="write-link" href="https://github.com/darkstar1227/learning-sre-for-ai-era" target="_blank" rel="noopener noreferrer">
+                      {r.writeLink} →
+                    </a>
+                  </div>
                 </div>
               </Card>
             </div>
@@ -472,9 +478,9 @@ export function Contact({ t }: { t: Copy }) {
           <div className="wrap">
             <Eyebrow idx="09">{c.eyebrow}</Eyebrow>
             <div {...reveal('rise', 1)}>
-              <GlassTitle as="h2" className="contact-title">
+              <LensTitle as="h2" className="contact-title" strength={0.8}>
                 {c.title}
-              </GlassTitle>
+              </LensTitle>
             </div>
             <p className="lede" {...reveal('rise', 2)}>
               {c.lede}

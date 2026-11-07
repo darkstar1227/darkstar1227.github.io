@@ -3,12 +3,33 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Hao-Ting Lee (李浩廷) · Software Engineer</title>
-    <meta name="description" content="Hao-Ting Lee (Justin): a software engineer who turns real-world needs into systems that keep running. Medical-imaging research, hands-on hardware, SRE and infrastructure." />
+    <title>Hao-Ting Lee (李浩廷) · Software Engineer, SRE &amp; AI Systems</title>
+    <meta name="description" content="Hao-Ting Lee (李浩廷, Justin) is a software engineer in Taoyuan, Taiwan who builds and operates reliable software and AI systems: lab monitoring, internal AI agent tools, local LLM inference and medical-imaging research." />
+    <meta name="author" content="Hao-Ting Lee" />
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
+    <link rel="canonical" href="https://dst-justin.com/" />
+    <link rel="alternate" type="text/plain" title="LLM summary" href="https://dst-justin.com/llms.txt" />
+    <link rel="sitemap" type="application/xml" href="https://dst-justin.com/sitemap.xml" />
     <meta name="theme-color" content="#0b0d10" />
-    <meta property="og:title" content="Hao-Ting Lee · Software Engineer" />
-    <meta property="og:description" content="I turn real-world needs into systems that keep running." />
-    <meta property="og:image" content="/img/portrait-960.webp" />
+
+    <meta property="og:type" content="profile" />
+    <meta property="og:site_name" content="Hao-Ting Lee" />
+    <meta property="og:url" content="https://dst-justin.com/" />
+    <meta property="og:title" content="Hao-Ting Lee (李浩廷) · Software Engineer" />
+    <meta property="og:description" content="I turn real-world needs into systems that keep running: reliable software, AI tools and lab infrastructure." />
+    <meta property="og:image" content="https://dst-justin.com/img/og.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Hao-Ting Lee, Software Engineer" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:locale:alternate" content="zh_TW" />
+    <meta property="profile:first_name" content="Hao-Ting" />
+    <meta property="profile:last_name" content="Lee" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Hao-Ting Lee (李浩廷) · Software Engineer" />
+    <meta name="twitter:description" content="I turn real-world needs into systems that keep running: reliable software, AI tools and lab infrastructure." />
+    <meta name="twitter:image" content="https://dst-justin.com/img/og.jpg" />
+
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="preload" as="image" type="image/avif" fetchpriority="high"
       imagesrcset="/img/portrait-360.avif 360w, /img/portrait-540.avif 540w, /img/portrait-720.avif 720w, /img/portrait-960.avif 960w"
@@ -16,6 +37,80 @@
     <style>html,body{background:#0b0d10;margin:0}</style>
     <!-- Motion states (hidden-until-revealed) only apply with JS on and reduced motion off. -->
     <script>if(!matchMedia('(prefers-reduced-motion: reduce)').matches)document.documentElement.classList.add('motion')</script>
+
+    <!-- Structured data for search and answer engines. Keep in sync with src/data/content.ts. -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "WebSite",
+          "@id": "https://dst-justin.com/#website",
+          "url": "https://dst-justin.com/",
+          "name": "Hao-Ting Lee",
+          "inLanguage": ["en", "zh-Hant"],
+          "publisher": { "@id": "https://dst-justin.com/#person" }
+        },
+        {
+          "@type": "ProfilePage",
+          "@id": "https://dst-justin.com/#profile",
+          "url": "https://dst-justin.com/",
+          "name": "Hao-Ting Lee (李浩廷) · Software Engineer",
+          "isPartOf": { "@id": "https://dst-justin.com/#website" },
+          "mainEntity": { "@id": "https://dst-justin.com/#person" },
+          "dateModified": "2026-11-07"
+        },
+        {
+          "@type": "Person",
+          "@id": "https://dst-justin.com/#person",
+          "name": "Hao-Ting Lee",
+          "alternateName": ["李浩廷", "Justin Lee", "Justin"],
+          "givenName": "Hao-Ting",
+          "familyName": "Lee",
+          "url": "https://dst-justin.com/",
+          "image": "https://dst-justin.com/img/portrait-960.webp",
+          "email": "mailto:justin30303.jl@gmail.com",
+          "jobTitle": "Software Engineer",
+          "description": "Software engineer who builds and operates reliable software and AI systems, with a background in deep learning for medical imaging.",
+          "address": { "@type": "PostalAddress", "addressLocality": "Taoyuan", "addressCountry": "TW" },
+          "worksFor": { "@type": "Organization", "name": "Cancerfree Biotech Ltd", "alternateName": "精拓生技股份有限公司", "url": "https://cancerfree.io" },
+          "alumniOf": { "@type": "CollegeOrUniversity", "name": "Yuan Ze University", "alternateName": "元智大學" },
+          "hasCredential": [
+            { "@type": "EducationalOccupationalCredential", "credentialCategory": "degree", "name": "M.Sc. in Computer Science and Engineering", "recognizedBy": { "@type": "CollegeOrUniversity", "name": "Yuan Ze University" } },
+            { "@type": "EducationalOccupationalCredential", "credentialCategory": "degree", "name": "B.Sc. in Computer Science and Engineering", "recognizedBy": { "@type": "CollegeOrUniversity", "name": "Yuan Ze University" } }
+          ],
+          "knowsAbout": ["Site Reliability Engineering", "Infrastructure", "Full-stack development", "FastAPI", "React", "PostgreSQL", "Docker", "Prometheus", "Grafana", "LLM inference", "vLLM", "Retrieval-augmented generation", "Model Context Protocol", "Edge AI", "Medical imaging", "Deep learning"],
+          "knowsLanguage": ["zh-Hant", "en"],
+          "award": [
+            "1st Place, Master's Presentation, ICMHI 2025",
+            "1st Place, Student Essay Competition, ICMHI 2023",
+            "Session Best Presenter, ICMHI 2022"
+          ],
+          "sameAs": [
+            "https://github.com/darkstar1227",
+            "https://www.linkedin.com/in/justin-lee-dst1227",
+            "https://ithelp.ithome.com.tw/users/20163611/ironman"
+          ]
+        },
+        {
+          "@type": "CreativeWorkSeries",
+          "name": "Learning SRE for the AI Era",
+          "url": "https://ithelp.ithome.com.tw/users/20163611/ironman/9343",
+          "author": { "@id": "https://dst-justin.com/#person" },
+          "inLanguage": "zh-Hant",
+          "description": "2026 iThome Ironman series (AI Engineering): from an SRE lab to production AI reliability."
+        },
+        {
+          "@type": "ScholarlyArticle",
+          "headline": "Demodicosis Mite Detection in Eyes with Blepharitis and Meibomian Gland Dysfunction Based on Deep Learning Model",
+          "isPartOf": { "@type": "Periodical", "name": "Diagnostics" },
+          "datePublished": "2025-12",
+          "sameAs": "https://doi.org/10.3390/diagnostics15243204",
+          "author": { "@id": "https://dst-justin.com/#person" }
+        }
+      ]
+    }
+    </script>
   </head>
   <body>
     <div id="root"></div>

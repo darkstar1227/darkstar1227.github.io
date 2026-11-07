@@ -107,6 +107,11 @@ main { position: relative; }
   filter: drop-shadow(0 1px 0 #ffffff40) drop-shadow(0 10px 22px #00000080);
   padding-bottom: .08em;
 }
+/* Prism LensText: the SVG carries the refracted glyphs; the padding is built into the SVG box,
+   so pull it back by the same 0.14em to keep the title aligned with the plain fallback. */
+.lens-title { margin: 0; font-weight: 700; letter-spacing: 0; position: relative; }
+.lens-title svg { display: block; overflow: visible; max-width: calc(100% + .28em); height: auto; margin: -.14em; }
+.lens-title text { font-family: inherit; font-weight: inherit; letter-spacing: inherit; fill: #fff; }
 
 /* ---------- Primitives ---------- */
 .eyebrow { display: flex; align-items: center; gap: 12px; font-size: 12px; line-height: 16px; font-weight: 500; letter-spacing: .14em; text-transform: uppercase; color: var(--accent-text); }
@@ -266,6 +271,7 @@ main { position: relative; }
 .write-in p { font-size: 15px; line-height: 25px; color: var(--text-secondary); }
 .pf .write-line { font-family: var(--font-mono); font-size: 12px; line-height: 18px; color: var(--accent-text); }
 .write-link { font-size: 14px; }
+.write-links { display: flex; flex-wrap: wrap; gap: 8px 20px; }
 .sk-group + .sk-group { margin-top: 28px; }
 .sk-group h3 { font-size: 14px; line-height: 20px; font-weight: 600; }
 .sk-list { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px; }
