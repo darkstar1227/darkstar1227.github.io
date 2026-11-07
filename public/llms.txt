@@ -26,6 +26,7 @@
 ## Links
 
 - Website: https://dst-justin.com/
+- Full page as Markdown: https://dst-justin.com/index.md
 - GitHub: https://github.com/darkstar1227
 - LinkedIn: https://www.linkedin.com/in/justin-lee-dst1227
 - Email: justin30303.jl@gmail.com
