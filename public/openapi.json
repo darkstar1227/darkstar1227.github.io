@@ -1,0 +1,52 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "dst-justin.com content",
+    "version": "1.0.0",
+    "summary": "Read-only, public endpoints for the portfolio of Hao-Ting Lee (李浩廷).",
+    "description": "Static site. No authentication, no write operations. The homepage supports content negotiation: send Accept: text/markdown to get the Markdown version.",
+    "contact": { "name": "Hao-Ting Lee", "url": "https://dst-justin.com/", "email": "justin30303.jl@gmail.com" }
+  },
+  "servers": [{ "url": "https://dst-justin.com" }],
+  "paths": {
+    "/": {
+      "get": {
+        "summary": "Portfolio homepage",
+        "description": "HTML by default; Markdown when the Accept header includes text/markdown.",
+        "parameters": [
+          { "name": "Accept", "in": "header", "required": false, "schema": { "type": "string", "examples": ["text/markdown", "text/html"] } }
+        ],
+        "responses": {
+          "200": {
+            "description": "The full portfolio page.",
+            "headers": {
+              "x-markdown-tokens": { "description": "Approximate token count, Markdown responses only.", "schema": { "type": "integer" } }
+            },
+            "content": {
+              "text/html": { "schema": { "type": "string" } },
+              "text/markdown": { "schema": { "type": "string" } }
+            }
+          }
+        }
+      }
+    },
+    "/index.md": {
+      "get": {
+        "summary": "Portfolio page as Markdown",
+        "responses": { "200": { "description": "Markdown with YAML frontmatter and JSON-LD.", "content": { "text/markdown": { "schema": { "type": "string" } } } } }
+      }
+    },
+    "/llms.txt": {
+      "get": {
+        "summary": "Short profile summary for language models",
+        "responses": { "200": { "description": "llms.txt summary with links.", "content": { "text/plain": { "schema": { "type": "string" } } } } }
+      }
+    },
+    "/sitemap.xml": {
+      "get": {
+        "summary": "XML sitemap",
+        "responses": { "200": { "description": "Sitemaps protocol document.", "content": { "application/xml": { "schema": { "type": "string" } } } } }
+      }
+    }
+  }
+}

@@ -3,8 +3,10 @@
 // 2. Writes dist/index.md, the Markdown version served to agents that send `Accept: text/markdown`
 //    (see functions/index.js).
 // 3. Writes dist/sitemap.xml with lastmod set to the date of the latest commit.
-import { readFile, writeFile, rm } from 'node:fs/promises';
+// 4. Writes dist/.well-known/agent-skills/index.json from the published SKILL.md files.
+import { readFile, readdir, writeFile, rm } from 'node:fs/promises';
 import { execSync } from 'node:child_process';
+import { createHash } from 'node:crypto';
 import { fileURLToPath, pathToFileURL } from 'node:url';
 import TurndownService from 'turndown';
 
@@ -83,3 +85,25 @@ const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
 `;
 await writeFile(`${root}dist/sitemap.xml`, sitemap);
 console.log(`sitemap written: lastmod ${lastmod}`);
+
+// 4. Agent Skills discovery index (v0.2.0). Digests are computed from the published files,
+//    so they always match what agents download.
+const skillsDir = `${root}dist/.well-known/agent-skills`;
+const skills = [];
+for (const entry of await readdir(skillsDir, { withFileTypes: true })) {
+  if (!entry.isDirectory()) continue;
+  const file = await readFile(`${skillsDir}/${entry.name}/SKILL.md`);
+  const front = file.toString('utf8').match(/^---\n([\s\S]*?)\n---/)?.[1] ?? '';
+  const field = (k) => front.match(new RegExp(`^${k}:\\s*(.+)$`, 'm'))?.[1]?.trim();
+  if (field('name') !== entry.name) throw new Error(`SKILL.md name must match its folder: ${entry.name}`);
+  skills.push({
+    name: entry.name,
+    type: 'skill-md',
+    description: field('description'),
+    url: `/.well-known/agent-skills/${entry.name}/SKILL.md`,
+    digest: `sha256:${createHash('sha256').update(file).digest('hex')}`,
+  });
+}
+const skillsIndex = { $schema: 'https://schemas.agentskills.io/discovery/0.2.0/schema.json', skills };
+await writeFile(`${skillsDir}/index.json`, `${JSON.stringify(skillsIndex, null, 2)}\n`);
+console.log(`agent skills index written: ${skills.map((s) => s.name).join(', ')}`);

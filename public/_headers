@@ -15,3 +15,15 @@
 
 /index.md
   Content-Type: text/markdown; charset=utf-8
+
+/.well-known/api-catalog
+  Content-Type: application/linkset+json
+
+/openapi.json
+  Content-Type: application/vnd.oai.openapi+json
+
+/.well-known/agent-skills/*
+  Access-Control-Allow-Origin: *
+
+/.well-known/agent-skills/*/SKILL.md
+  Content-Type: text/markdown; charset=utf-8

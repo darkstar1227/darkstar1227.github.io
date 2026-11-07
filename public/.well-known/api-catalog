@@ -1,0 +1,13 @@
+{
+  "linkset": [
+    {
+      "anchor": "https://dst-justin.com/",
+      "service-desc": [
+        { "href": "https://dst-justin.com/openapi.json", "type": "application/vnd.oai.openapi+json" }
+      ],
+      "service-doc": [
+        { "href": "https://dst-justin.com/llms.txt", "type": "text/plain" }
+      ]
+    }
+  ]
+}
