@@ -1,5 +1,9 @@
 # Everyone is welcome, including AI search and answer engines.
+# Content Signals (https://contentsignals.org/): search = search indexing and results,
+# ai-input = use in AI answers and agents (RAG, grounding), ai-train = training AI models.
+# Keep in sync with the Content-Signal header in functions/index.js.
 User-agent: *
+Content-Signal: ai-train=yes, search=yes, ai-input=yes
 Allow: /
 
 Sitemap: https://dst-justin.com/sitemap.xml
