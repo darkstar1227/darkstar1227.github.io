@@ -160,7 +160,7 @@ export const I18N = {
           "tone": "info",
           "title": "Turning needs into systems",
           "org": "Cancerfree Biotech · Software Engineer Intern",
-          "a": "Research and product, side by side: 4+ full-stack systems with Vue.js and FastAPI, deployed on GCP, monitored in Grafana, YOLO on edge devices. ",
+          "a": "Research and product, side by side: 4+ full-stack systems with Vue.js and FastAPI, run as Docker services on GCP Compute Engine, watched by Uptime Kuma, YOLO on edge devices. ",
           "s": "The research went on to Japan and Chicago.",
           "b": ""
         },
@@ -835,7 +835,7 @@ export const I18N = {
           "tone": "info",
           "title": "把需求做成系統",
           "org": "Cancerfree Biotech · 軟體工程實習生",
-          "a": "研究與產品並行：用 Vue.js 和 FastAPI 做了 4 個以上的全端系統，在 GCP 上部署、用 Grafana 看監控，把 YOLO 放進邊緣裝置。",
+          "a": "研究與產品並行：用 Vue.js 和 FastAPI 做了 4 個以上的全端系統，在 GCP Compute Engine 上用 Docker 運行、以 Uptime Kuma 監控，把 YOLO 放進邊緣裝置。",
           "s": "研究成果也帶到了日本和芝加哥。",
           "b": ""
         },
