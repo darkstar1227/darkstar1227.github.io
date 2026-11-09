@@ -5,6 +5,47 @@ import { Icon } from './ui'
 
 const useScene = () => useSyncExternalStore(subscribeScene, getScene, getServerScene)
 
+const STAR = 'M26 16Q27.3 24.7 36 26Q27.3 27.3 26 36Q24.7 27.3 16 26Q24.7 24.7 26 16Z'
+
+/** 闇星 "Night crescent" mark, kept in sync with public/favicon.svg. IDs are prefixed to stay unique in the page. */
+function BrandMark() {
+  return (
+    <svg viewBox="0 0 64 64" width="24" height="24" aria-hidden="true">
+      <defs>
+        <radialGradient id="bm-disc" cx="26" cy="20" r="44" gradientUnits="userSpaceOnUse">
+          <stop offset="0" stopColor="#1e252d" />
+          <stop offset="1" stopColor="#0b0d10" />
+        </radialGradient>
+        <linearGradient id="bm-rim" x1="8" y1="4" x2="56" y2="60" gradientUnits="userSpaceOnUse">
+          <stop offset="0" stopColor="#fff" stopOpacity=".62" />
+          <stop offset=".32" stopColor="#fff" stopOpacity=".14" />
+          <stop offset=".7" stopColor="#72ddeb" stopOpacity=".1" />
+          <stop offset="1" stopColor="#edbe8c" stopOpacity=".22" />
+        </linearGradient>
+        <linearGradient id="bm-pigment" x1="12" y1="52" x2="52" y2="12" gradientUnits="userSpaceOnUse">
+          <stop offset="0" stopColor="#edbe8c" />
+          <stop offset=".5" stopColor="#ef9aae" />
+          <stop offset="1" stopColor="#72ddeb" />
+        </linearGradient>
+        <filter id="bm-glow" x="-40%" y="-40%" width="180%" height="180%">
+          <feGaussianBlur stdDeviation="2.4" />
+        </filter>
+        <mask id="bm-crescent" maskUnits="userSpaceOnUse" x="0" y="0" width="64" height="64">
+          <rect width="64" height="64" fill="#000" />
+          <circle cx="32" cy="32" r="24" fill="#fff" />
+          <circle cx="28.5" cy="28.5" r="25" fill="#000" />
+        </mask>
+      </defs>
+      <circle cx="32" cy="32" r="29" fill="url(#bm-disc)" />
+      <circle cx="32" cy="32" r="28.4" fill="none" stroke="url(#bm-rim)" strokeWidth="1.2" />
+      <circle cx="32" cy="32" r="24" fill="url(#bm-pigment)" mask="url(#bm-crescent)" opacity=".7" filter="url(#bm-glow)" />
+      <circle cx="32" cy="32" r="24" fill="url(#bm-pigment)" mask="url(#bm-crescent)" />
+      <path d={STAR} fill="#a8eff7" opacity=".5" filter="url(#bm-glow)" />
+      <path d={STAR} fill="#f4f6f8" />
+    </svg>
+  )
+}
+
 /** Fixed glass nav. Only this and the chapter pill re-render when the active section changes. */
 export const NavBar = memo(function NavBar({ t, lang, onLang }: { t: Copy; lang: Lang; onLang: (l: Lang) => void }) {
   const scene = useScene()
@@ -14,10 +55,7 @@ export const NavBar = memo(function NavBar({ t, lang, onLang }: { t: Copy; lang:
     <div className="navslot">
       <nav className="nav glass-control" aria-label={t.navLabel}>
         <a className="nav-brand" href="#top">
-          <svg viewBox="0 0 18 18" width="18" height="18" aria-hidden="true">
-            <path d="M9 1.5 16.5 15H1.5L9 1.5Z" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinejoin="round" />
-            <path d="M9 6.5 12.6 13H5.4L9 6.5Z" fill="var(--accent)" opacity=".9" />
-          </svg>
+          <BrandMark />
           {t.brand}
         </a>
         <button className="nav-menu" type="button" aria-expanded={open} aria-controls="nav-links" aria-label="Menu" onClick={() => setOpen((o) => !o)}>
