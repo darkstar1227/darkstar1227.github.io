@@ -428,24 +428,6 @@ export function Roadmap({ t }: { t: Copy }) {
                 </li>
               ))}
             </ul>
-            <div className="write" {...reveal('rise', 2)}>
-              <Card>
-                <div className="write-in">
-                  <div className="prod-tag">{r.writeTag}</div>
-                  <h3 className="write-title">{r.writeTitle}</h3>
-                  <p>{r.writeText}</p>
-                  <p className="write-line">Build → Trace → Break → Measure → Evaluate → Recover → Improve</p>
-                  <div className="write-links">
-                    <a className="write-link" href={ITHOME_SERIES} target="_blank" rel="noopener noreferrer">
-                      {r.writeLinkIthome} →
-                    </a>
-                    <a className="write-link" href="https://github.com/darkstar1227/learning-sre-for-ai-era" target="_blank" rel="noopener noreferrer">
-                      {r.writeLink} →
-                    </a>
-                  </div>
-                </div>
-              </Card>
-            </div>
           </div>
           <div {...reveal('rise', 2)}>
             {r.stack.map((g) => (
@@ -462,6 +444,36 @@ export function Roadmap({ t }: { t: Copy }) {
               </div>
             ))}
           </div>
+        </div>
+        <div className="write" {...reveal('rise', 2)}>
+          <Card>
+            <div className="write-in">
+              <div className="prod-tag">{r.writeTag}</div>
+              <h3 className="write-title">{r.writeTitle}</h3>
+              <p>{r.writeText}</p>
+              <p className="write-line">Build → Trace → Break → Measure → Evaluate → Recover → Improve</p>
+              <h4 className="write-picks-label">{r.writePicksLabel}</h4>
+              <ol className="write-picks">
+                {r.writePicks.map((a) => (
+                  <li key={a.day}>
+                    <a href={ITHOME_SERIES} target="_blank" rel="noopener noreferrer">
+                      <span className="write-day">{a.day}</span>
+                      <span className="write-pick-t">{a.t}</span>
+                      <span className="write-pick-d">{a.d}</span>
+                    </a>
+                  </li>
+                ))}
+              </ol>
+              <div className="write-links">
+                <a className="write-link" href={ITHOME_SERIES} target="_blank" rel="noopener noreferrer">
+                  {r.writeLinkIthome} →
+                </a>
+                <a className="write-link" href="https://github.com/darkstar1227/learning-sre-for-ai-era" target="_blank" rel="noopener noreferrer">
+                  {r.writeLink} →
+                </a>
+              </div>
+            </div>
+          </Card>
         </div>
       </div>
     </Page>

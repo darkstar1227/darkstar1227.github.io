@@ -265,12 +265,21 @@ main { position: relative; }
 .now-list li { display: grid; grid-template-columns: 140px minmax(0, 1fr); gap: 20px; padding: 18px 0; border-top: 1px solid var(--border-subtle); font-size: 16px; line-height: 26px; color: var(--text-secondary); }
 .now-list li:last-child { border-bottom: 1px solid var(--border-subtle); }
 .now-list b { font-weight: 500; font-size: 13px; letter-spacing: .06em; color: var(--text-muted); }
-.write { margin-top: 32px; }
+.write { margin-top: 56px; }
 .write-in { display: flex; flex-direction: column; gap: 10px; }
 .write-title { font-size: 22px; line-height: 30px; font-weight: 600; }
 .write-in p { font-size: 15px; line-height: 25px; color: var(--text-secondary); }
 .pf .write-line { font-family: var(--font-mono); font-size: 12px; line-height: 18px; color: var(--accent-text); }
 .write-link { font-size: 14px; }
+.write-picks-label { margin-top: 6px; font-size: 13px; line-height: 20px; font-weight: 600; color: var(--text-muted); }
+.write-picks { list-style: none; margin: 0 0 4px; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); column-gap: 32px; }
+.write-picks li { border-top: 1px solid var(--border-subtle); }
+.write-picks a { display: grid; grid-template-columns: 56px minmax(0, 1fr); column-gap: 12px; min-height: var(--touch-min); padding: 10px 4px; color: inherit; text-decoration: none; border-radius: var(--radius-xs); transition: background var(--dur-fast) var(--ease-standard); }
+.write-picks a:hover { background: var(--surface-hover); }
+.write-picks a:hover .write-pick-t { color: var(--accent-text); }
+.pf .write-day { grid-row: span 2; font-family: var(--font-mono); font-size: 12px; line-height: 22px; color: var(--accent-text); }
+.write-pick-t { font-size: 15px; line-height: 22px; font-weight: 600; color: var(--text-primary); transition: color var(--dur-fast) var(--ease-standard); }
+.pf .write-pick-d { font-size: 13px; line-height: 20px; color: var(--text-muted); margin-top: 2px; }
 .write-links { display: flex; flex-wrap: wrap; gap: 8px 20px; }
 .sk-group + .sk-group { margin-top: 28px; }
 .sk-group h3 { font-size: 14px; line-height: 20px; font-weight: 600; }
@@ -359,6 +368,7 @@ main { position: relative; }
   .tl-item { grid-template-columns: minmax(0, 1fr); gap: 16px; }
   .grid3 { grid-template-columns: repeat(2, minmax(0, 1fr)); grid-auto-rows: auto; }
   .now-grid { grid-template-columns: minmax(0, 1fr); gap: 48px; }
+  .write-picks { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .contact-title { font-size: 48px; }
 }
 @media (max-width: 760px) {
@@ -375,7 +385,7 @@ main { position: relative; }
   .hero-sub { font-size: 17px; line-height: 30px; }
   .fact-num { font-size: 34px; line-height: 40px; }
   .intro { font-size: 21px; line-height: 36px; }
-  .products, .grid3 { grid-template-columns: minmax(0, 1fr); }
+  .products, .grid3, .write-picks { grid-template-columns: minmax(0, 1fr); }
   .tr-title { font-size: 28px; line-height: 36px; }
   .tl { padding-left: 40px; }
   .tl-line { left: 7px; }

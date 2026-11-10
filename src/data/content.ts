@@ -524,6 +524,15 @@ export const I18N = {
       "writeText": "My contest series, from an SRE lab to production AI reliability: FastAPI, Prometheus, Grafana, Loki, OpenTelemetry and LLM tracing, applied to SLOs, error budgets, failure injection and incidents.",
       "writeLinkIthome": "Read the series on iThome",
       "writeLink": "Lab code on GitHub",
+      "writePicksLabel": "Selected articles (in Traditional Chinese)",
+      "writePicks": [
+        { "day": "Day 04", "t": "What Is SRE? Reliability Is Not Zero Failure", "d": "SRE manages service reliability with software engineering, and the job goes far beyond monitoring and firefighting." },
+        { "day": "Day 07", "t": "Technical Success ≠ Semantic Success", "d": "HTTP 200 and an all-green trace prove the pipeline ran, not that the user got a usable, correct and safe answer." },
+        { "day": "Day 14", "t": "SLI, SLO, SLA: Measure the Promise First", "d": "An SLI is a measurement, an SLO a team target, an SLA an external commitment; mixing them makes dashboards and contracts disagree." },
+        { "day": "Day 16", "t": "Why Average Latency Lies", "d": "Averages hide a few very slow requests; interactive services need the distribution and P50, P95 or P99." },
+        { "day": "Day 20", "t": "Error Budget and Burn Rate", "d": "An error budget is the risk an SLO accepts, not a quota for failure; burn rate says whether you will spend it too early." },
+        { "day": "Day 26", "t": "AI Alerting: One Hallucination Shouldn't Wake Everyone", "d": "Route AI alerts by impact and actionability: outages page on-call, while single quality samples go to evaluation or review." }
+      ],
       "rows": [
         {
           "k": "Most interested",
@@ -1199,6 +1208,15 @@ export const I18N = {
       "writeText": "我的參賽系列：從 SRE Lab 到 Production AI Reliability。用 FastAPI、Prometheus、Grafana、Loki、OpenTelemetry 與 LLM Tracing，實作 SLO、Error Budget、故障注入與事故處理。",
       "writeLinkIthome": "在 iThome 閱讀系列",
       "writeLink": "GitHub 實作程式碼",
+      "writePicksLabel": "精選文章",
+      "writePicks": [
+        { "day": "Day 04", "t": "什麼是 SRE？可靠性不是零故障", "d": "SRE 用軟體工程方法管理服務可靠性，工作範圍遠超過監控與救火。" },
+        { "day": "Day 07", "t": "Technical Success ≠ Semantic Success：AI 系統如何「正常地失敗」？", "d": "HTTP 200、trace 全綠只證明流程跑完，不能證明使用者拿到可用、正確而且安全的答案。" },
+        { "day": "Day 14", "t": "SLI、SLO、SLA：先量承諾，再談百分比", "d": "SLI 是量測結果，SLO 是團隊目標，SLA 是對外承諾；混在一起，dashboard 與合約就會各說各話。" },
+        { "day": "Day 16", "t": "平均 Latency 為什麼會騙人？請看尾端", "d": "平均值會掩蓋少數非常慢的請求；互動服務要同時看分布與 P50、P95 或 P99。" },
+        { "day": "Day 20", "t": "Error Budget 與 Burn Rate：預算用完要真的改變行為", "d": "Error budget 不是故障額度，而是 SLO 留下的可接受風險；burn rate 告訴你會不會太早花光。" },
+        { "day": "Day 26", "t": "AI Alerting：一筆幻覺不該叫醒所有人", "d": "AI 告警依影響範圍與可行動性分流；單一品質樣本先進 evaluation 或人工 review，不直接叫醒 on-call。" }
+      ],
       "rows": [
         {
           "k": "最感興趣",
