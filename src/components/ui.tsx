@@ -101,8 +101,12 @@ function lensFilter(id: string, g: LensGeo, strength: number) {
   const surface = Math.max(2, fs * 0.05)
   const rim = Math.max(1, fs * 0.03)
   const pig = { x: Math.round(-g.w * 0.9), y: Math.round(-g.h * 0.25), w: Math.round(g.w * 2), h: Math.round(g.h * 1.55) }
+  // feDisplacementMap samples up to ±scale/2 (×1.08 for the red pass) away, and anything outside the
+  // filter region is transparent. Glyph edges near the SVG box (the g descender, the last e) would sample
+  // nothing and drop out, so the region reaches past the box by the displacement reach plus the bg blur.
+  const m = Math.ceil(scale * 0.54 + 1.2 * 3 + 2)
   return (
-    `<filter id="${id}" x="0" y="0" width="${g.w}" height="${g.h}" filterUnits="userSpaceOnUse" primitiveUnits="userSpaceOnUse" color-interpolation-filters="sRGB">` +
+    `<filter id="${id}" x="${-m}" y="${-m}" width="${g.w + m * 2}" height="${g.h + m * 2}" filterUnits="userSpaceOnUse" primitiveUnits="userSpaceOnUse" color-interpolation-filters="sRGB">` +
     `<feFlood flood-color="#0b0d10" result="ground"/>` +
     `<feImage href="${HERO_PIGMENT}" x="${pig.x}" y="${pig.y}" width="${pig.w}" height="${pig.h}" preserveAspectRatio="none" result="pig"/>` +
     `<feComposite in="pig" in2="ground" operator="over" result="bg0"/><feColorMatrix in="bg0" type="saturate" values="1.7" result="bg1"/><feGaussianBlur in="bg1" stdDeviation="1.2" result="bg"/>` +
