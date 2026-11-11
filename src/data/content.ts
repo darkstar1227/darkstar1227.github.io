@@ -87,7 +87,7 @@ export const I18N = {
           "tone": "neutral"
         },
         {
-          "label": "Open to SRE / platform roles",
+          "label": "Reliable tools & systems",
           "tone": "neutral"
         }
       ],
@@ -178,8 +178,8 @@ export const I18N = {
           "when": "2026 →",
           "stage": "What's next",
           "tone": "accent",
-          "title": "Going deeper into infrastructure",
-          "org": "Open to SRE, platform, backend and ML infrastructure roles",
+          "title": "Building systems teams rely on",
+          "org": "Open to backend, internal tools, platform, AI engineering and SRE roles",
           "a": "Next is depth: ",
           "s": "becoming an engineer who designs, deploys and operates reliable software and AI systems",
           "b": ", in Taiwan or abroad. I documented the path in my iThome Ironman series."
@@ -536,7 +536,7 @@ export const I18N = {
       "rows": [
         {
           "k": "Most interested",
-          "v": "SRE, infrastructure and systems operations"
+          "v": "Reliable backend and AI systems, internal tools, infrastructure and operations"
         },
         {
           "k": "Also love",
@@ -709,7 +709,7 @@ export const I18N = {
     "contact": {
       "eyebrow": "Let's talk",
       "title": "Let's build together.",
-      "lede": "Hiring for SRE, platform, backend or ML infrastructure? Looking for a research collaborator? I'd love to hear from you."
+      "lede": "Hiring for backend, internal tools, platform, AI engineering or SRE? Looking for a research collaborator? I'd love to hear from you."
     },
     "foot": "Built with the Prism design system"
   },
@@ -771,7 +771,7 @@ export const I18N = {
           "tone": "neutral"
         },
         {
-          "label": "尋找 SRE／平台職位",
+          "label": "打造可靠的工具與系統",
           "tone": "neutral"
         }
       ],
@@ -862,8 +862,8 @@ export const I18N = {
           "when": "2026 →",
           "stage": "下一步",
           "tone": "accent",
-          "title": "往基礎設施走得更深",
-          "org": "尋找 SRE、平台、後端與 ML 基礎設施職位",
+          "title": "做出團隊能依賴的系統",
+          "org": "尋找後端、內部工具、平台、AI 工程與 SRE 職位",
           "a": "接下來的重點是深度：",
           "s": "成為能設計、部署並維運可靠軟體與 AI 系統的工程師",
           "b": "，在台灣或海外都可以。這段路我寫成了 iThome 鐵人賽系列。"
@@ -1220,7 +1220,7 @@ export const I18N = {
       "rows": [
         {
           "k": "最感興趣",
-          "v": "SRE、基礎設施與系統維運"
+          "v": "可靠的後端與 AI 系統、內部工具、基礎設施與維運"
         },
         {
           "k": "也很喜歡",
@@ -1393,7 +1393,7 @@ export const I18N = {
     "contact": {
       "eyebrow": "聯絡",
       "title": "一起把系統做穩。",
-      "lede": "正在找 SRE、平台、後端或 ML 基礎設施人才？想找研究夥伴？歡迎寫信給我。"
+      "lede": "正在找後端、內部工具、平台、AI 工程或 SRE 人才？想找研究夥伴？歡迎寫信給我。"
     },
     "foot": "以 Prism 設計系統建置"
   }
