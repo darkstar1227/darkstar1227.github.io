@@ -93,7 +93,9 @@ export const I18N = {
       ],
       "cta1": "Read my story",
       "cta2": "Say hello",
-      "photoAlt": "Portrait of Hao-Ting Lee in a white and navy shirt, hand on chin"
+      "photoAlt": "Portrait of Hao-Ting Lee in a white and navy shirt, hand on chin",
+      "photoPause": "Pause photo shuffle",
+      "photoPlay": "Resume photo shuffle"
     },
     "facts": {
       "eyebrow": "Traction",
@@ -777,7 +779,9 @@ export const I18N = {
       ],
       "cta1": "看看我的故事",
       "cta2": "打聲招呼",
-      "photoAlt": "李浩廷的半身照，穿白色與深藍拼接襯衫，手托下巴"
+      "photoAlt": "李浩廷的半身照，穿白色與深藍拼接襯衫，手托下巴",
+      "photoPause": "暫停照片輪播",
+      "photoPlay": "繼續照片輪播"
     },
     "facts": {
       "eyebrow": "成長指標",

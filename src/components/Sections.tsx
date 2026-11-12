@@ -2,6 +2,7 @@ import type { ReactNode } from 'react'
 import type { Copy } from '../data/content'
 import type { IconName } from '../data/icons'
 import { reveal } from '../lib/reveal'
+import { PhotoStack } from './PhotoStack'
 import { Badge, Button, Card, Counter, Eyebrow, Heading, LensTitle, Icon, Pigment } from './ui'
 
 const EMAIL = 'mailto:justin30303.jl@gmail.com'
@@ -56,17 +57,7 @@ export function Hero({ t }: { t: Copy }) {
               </div>
             </div>
             <div className="portrait">
-              <figure className="photo">
-                <picture>
-                  <source type="image/avif" sizes="(max-width: 1000px) 300px, 420px" srcSet="/img/portrait-360.avif 360w, /img/portrait-540.avif 540w, /img/portrait-720.avif 720w, /img/portrait-960.avif 960w" />
-                  <source type="image/webp" sizes="(max-width: 1000px) 300px, 420px" srcSet="/img/portrait-360.webp 360w, /img/portrait-540.webp 540w, /img/portrait-720.webp 720w, /img/portrait-960.webp 960w" />
-                  <img src="/img/portrait-720.webp" width={741} height={1058} alt={h.photoAlt} fetchPriority="high" decoding="async" />
-                </picture>
-                <figcaption>
-                  <span>HAO-TING LEE</span>
-                  <span>SOFTWARE ENGINEER</span>
-                </figcaption>
-              </figure>
+              <PhotoStack alt={h.photoAlt} pauseLabel={h.photoPause} playLabel={h.photoPlay} />
             </div>
           </div>
         </div>
